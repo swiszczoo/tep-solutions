@@ -5,6 +5,16 @@
 
 using namespace std;
 
+void v_mod_tab(CTable* pcTab, int iNewSize)
+{
+    pcTab->bSetNewSize(iNewSize);
+}
+
+void v_mod_tab(CTable cTab, int iNewSize)
+{
+    cTab.bSetNewSize(iNewSize);
+}
+
 int main()
 {
     cout << "Zadanie 1:" << endl;
@@ -40,6 +50,18 @@ int main()
         CTable tab3(tab);
 
         delete tab2;
+    }
+
+    cout << "Test przekazywania przez kopie:" << endl;
+    {
+        CTable test;
+        v_mod_tab(test, 50);
+    }
+
+    cout << "Test wskaznika:" << endl;
+    {
+        CTable test;
+        v_mod_tab(&test, 50);
     }
 
     return 0;

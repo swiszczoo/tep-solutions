@@ -5,7 +5,7 @@ class CTable {
 public:
     CTable();
     CTable(const std::string& sName, int iTableLen);
-    CTable(CTable& other);
+    CTable(const CTable& other);
     ~CTable();
 
     void vSetName(const std::string& sName);

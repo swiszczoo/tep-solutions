@@ -24,7 +24,7 @@ CTable::CTable(const std::string& sName, int iTableLen)
     cout << "parametr: '" << s_name << "'" << endl;
 }
 
-CTable::CTable(CTable& pcOther)
+CTable::CTable(const CTable& pcOther)
 {
     *this = *pcOther.pcClone();
 
