@@ -58,17 +58,12 @@ bool CTable::bSetNewSize(int iTableLen)
 
     delete[] p_array;
     p_array = newArr;
+    i_size = iTableLen;
 
     return true;
 }
 
 CTable* CTable::pcClone() const
 {
-    CTable* newInstance = new CTable(s_name, i_size);
-
-    for (int i = 0; i < i_size; i++) {
-        newInstance->p_array[i] = p_array[i];
-    }
-
-    return newInstance;
+    return new CTable(*this);
 }
