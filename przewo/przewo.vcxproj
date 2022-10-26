@@ -21,11 +21,13 @@
   <ItemGroup>
     <ClCompile Include="lista1_CTable.cpp" />
     <ClCompile Include="lista1.cpp" />
+    <ClCompile Include="lista2_CTable.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lista1.h" />
     <ClInclude Include="lista1_CTable.h" />
+    <ClInclude Include="lista2_CTable.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -117,6 +119,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

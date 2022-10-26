@@ -9,26 +9,32 @@ const char CTable::COPY_SUFFIX[] = "_copy";
 using namespace std;
 
 CTable::CTable()
-    : s_name(DEFAULT_TABLE_NAME)
-    , p_array(new int[DEFAULT_TABLE_SIZE])
-    , i_size(DEFAULT_TABLE_SIZE)
 {
+    s_name = DEFAULT_TABLE_NAME;
+    p_array = new int[DEFAULT_TABLE_SIZE];
+    i_size = DEFAULT_TABLE_SIZE;
+
     cout << "bezp: '" << s_name << "'" << endl;
 }
 
 CTable::CTable(const std::string& sName, int iTableLen)
-    : s_name(sName)
-    , p_array(new int[iTableLen])
-    , i_size(DEFAULT_TABLE_SIZE)
 {
+    s_name = sName;
+    p_array = new int[iTableLen];
+    i_size = iTableLen;
+
     cout << "parametr: '" << s_name << "'" << endl;
 }
 
 CTable::CTable(const CTable& pcOther)
 {
-    *this = *pcOther.pcClone();
+    s_name = pcOther.s_name + "_copy";
+    p_array = new int[pcOther.i_size];
+    i_size = pcOther.i_size;
 
-    s_name += COPY_SUFFIX;
+    for (int i = 0; i < pcOther.i_size; i++) {
+        p_array[i] = pcOther.p_array[i];
+    }
 
     cout << "kopiuj: '" << s_name << "'" << endl;
 }
