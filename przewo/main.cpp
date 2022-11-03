@@ -17,7 +17,8 @@ int main()
         tab2.vSetValueAt(i, i * i);
     }
 
-    CTable_z2 tab3 = tab1 + tab2;
+    CTable_z2 tab3;
+    tab3 = tab1 + tab2;
     std::cout << "Nazwa tablicy: " << tab3.sGetName() << std::endl;
     tab3.vPrint();
 
