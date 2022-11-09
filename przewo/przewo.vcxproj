@@ -22,12 +22,18 @@
     <ClCompile Include="lista1_CTable.cpp" />
     <ClCompile Include="lista1.cpp" />
     <ClCompile Include="lista2_CTable.cpp" />
+    <ClCompile Include="lista3.cpp" />
+    <ClCompile Include="lista3_CTreeDynamic.cpp" />
+    <ClCompile Include="lista3_CTreeStatic.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lista1.h" />
     <ClInclude Include="lista1_CTable.h" />
     <ClInclude Include="lista2_CTable.h" />
+    <ClInclude Include="lista3.h" />
+    <ClInclude Include="lista3_CTreeDynamic.h" />
+    <ClInclude Include="lista3_CTreeStatic.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
