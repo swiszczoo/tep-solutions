@@ -17,13 +17,16 @@ public:
     CTable_z2* pcClone() const;
 
     CTable_z2 operator+(const CTable_z2& other);
+    CTable_z2& operator=(const CTable_z2& other);
 
 private:
-    static const char DEFAULT_TABLE_NAME[];
+    static const std::string DEFAULT_TABLE_NAME;
     static const int DEFAULT_TABLE_SIZE;
-    static const char COPY_SUFFIX[];
+    static const std::string COPY_SUFFIX;
 
     std::string s_name;
     int* p_array;
     int i_size;
+
+    void vCopyDataFrom(const CTable_z2& other);
 };

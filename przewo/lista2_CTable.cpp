@@ -2,9 +2,9 @@
 
 #include <iostream>
 
-const char CTable_z2::DEFAULT_TABLE_NAME[] = "DomyslnaTablica";
+const std::string CTable_z2::DEFAULT_TABLE_NAME = "DomyslnaTablica";
 const int CTable_z2::DEFAULT_TABLE_SIZE = 10;
-const char CTable_z2::COPY_SUFFIX[] = "_copy";
+const std::string CTable_z2::COPY_SUFFIX = "_copy";
 
 using namespace std;
 
@@ -13,8 +13,6 @@ CTable_z2::CTable_z2()
     s_name = DEFAULT_TABLE_NAME;
     p_array = new int[DEFAULT_TABLE_SIZE];
     i_size = DEFAULT_TABLE_SIZE;
-
-    cout << "bezp: '" << s_name << "'" << endl;
 }
 
 CTable_z2::CTable_z2(const std::string& sName, int iTableLen)
@@ -22,26 +20,15 @@ CTable_z2::CTable_z2(const std::string& sName, int iTableLen)
     s_name = sName;
     p_array = new int[iTableLen];
     i_size = iTableLen;
-
-    cout << "parametr: '" << s_name << "'" << endl;
 }
 
 CTable_z2::CTable_z2(const CTable_z2& pcOther)
 {
-    s_name = pcOther.s_name + "_copy";
-    p_array = new int[pcOther.i_size];
-    i_size = pcOther.i_size;
-
-    for (int i = 0; i < pcOther.i_size; i++) {
-        p_array[i] = pcOther.p_array[i];
-    }
-
-    cout << "kopiuj: '" << s_name << "'" << endl;
+    vCopyDataFrom(pcOther);
 }
 
 CTable_z2::~CTable_z2()
 {
-    cout << "usuwam: '" << s_name << "'" << endl;
     delete[] p_array;
 }
 
@@ -110,4 +97,23 @@ CTable_z2 CTable_z2::operator+(const CTable_z2& other)
     }
 
     return result;
+}
+
+CTable_z2& CTable_z2::operator=(const CTable_z2& other)
+{
+    delete[] p_array;
+
+    vCopyDataFrom(other);
+    return *this;
+}
+
+void CTable_z2::vCopyDataFrom(const CTable_z2& other)
+{
+    s_name = other.s_name;
+    p_array = new int[other.i_size];
+    i_size = other.i_size;
+
+    for (int i = 0; i < other.i_size; i++) {
+        p_array[i] = other.p_array[i];
+    }
 }
