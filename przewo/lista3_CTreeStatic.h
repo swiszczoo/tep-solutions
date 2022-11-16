@@ -4,36 +4,36 @@
 class CTreeStatic
 {
 public:
-    class CNodeStatic
+    class CNode
     {
         friend class CTreeStatic;
 
     public:
-        ~CNodeStatic();
+        ~CNode();
         void vSetValue(int iNewVal);
         int iGetChildrenNumber() const;
         void vAddNewChild();
-        CNodeStatic* pcGetChild(int iChildOffset);
+        CNode* pcGetChild(int iChildOffset);
         void vPrint() const;
         void vPrintAllBelow();
         void vPrintUp();
 
     private:
-        std::vector<CNodeStatic> v_children;
-        CNodeStatic* pc_parent_node;
+        std::vector<CNode> v_children;
+        CNode* pc_parent_node;
         int i_val;
 
-        CNodeStatic();
-        CNodeStatic(CNodeStatic* pcParent);
+        CNode();
+        CNode(CNode* pcParent);
     };
 
     CTreeStatic();
     ~CTreeStatic();
 
-    CNodeStatic* pcGetRoot();
+    CNode* pcGetRoot();
     void vPrintTree();
-    bool bMoveSubtree(CNodeStatic* pcParentNode, CNodeStatic* pcNewChildNode);
+    bool bMoveSubtree(CNode* pcParentNode, CNode* pcNewChildNode);
 
 private:
-    CNodeStatic c_root;
+    CNode c_root;
 };
