@@ -25,6 +25,7 @@
     <ClCompile Include="lista3.cpp" />
     <ClCompile Include="lista3_CTreeDynamic.cpp" />
     <ClCompile Include="lista3_CTreeStatic.cpp" />
+    <ClCompile Include="lista4.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -34,6 +35,8 @@
     <ClInclude Include="lista3.h" />
     <ClInclude Include="lista3_CTreeDynamic.h" />
     <ClInclude Include="lista3_CTreeStatic.h" />
+    <ClInclude Include="lista4.h" />
+    <ClInclude Include="lista4_CTreeDynamic.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
