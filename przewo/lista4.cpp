@@ -42,6 +42,8 @@ void v_tree_test_string()
     CTreeDynamic<std::string> c_tree;
     CTreeDynamic<std::string>::CNode* c_root = c_tree.pcGetRoot();
 
+    c_root->vSetValue("root");
+
     c_root->vAddNewChild();
     c_root->vAddNewChild();
 
