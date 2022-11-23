@@ -85,7 +85,7 @@ public:
 
     CTreeDynamic()
     {
-        c_root = new CTreeDynamic;
+        c_root = new CNode;
     }
 
     ~CTreeDynamic()
