@@ -22,7 +22,6 @@
     <ClCompile Include="lista1_CTable.cpp" />
     <ClCompile Include="lista1.cpp" />
     <ClCompile Include="lista2_CTable.cpp" />
-    <ClCompile Include="lista3.cpp" />
     <ClCompile Include="lista3_CTreeDynamic.cpp" />
     <ClCompile Include="lista3_CTreeStatic.cpp" />
     <ClCompile Include="lista4.cpp" />

@@ -4,36 +4,36 @@
 class CTreeDynamic
 {
 public:
-    class CNodeDynamic
+    class CNode
     {
         friend class CTreeDynamic;
 
     public:
-        ~CNodeDynamic();
+        ~CNode();
         void vSetValue(int iNewVal);
         int iGetChildrenNumber() const;
         void vAddNewChild();
-        CNodeDynamic* pcGetChild(int iChildOffset);
+        CNode* pcGetChild(int iChildOffset);
         void vPrint() const;
         void vPrintAllBelow();
         void vPrintUp();
 
     private:
-        std::vector<CNodeDynamic*> v_children;
-        CNodeDynamic* pc_parent_node;
+        std::vector<CNode*> v_children;
+        CNode* pc_parent_node;
         int i_val;
 
-        CNodeDynamic();
-        CNodeDynamic(CNodeDynamic* pcParent);
+        CNode();
+        CNode(CNode* pcParent);
     };
 
     CTreeDynamic();
     ~CTreeDynamic();
 
-    CNodeDynamic* pcGetRoot();
+    CNode* pcGetRoot();
     void vPrintTree();
-    bool bMoveSubtree(CNodeDynamic* pcParentNode, CNodeDynamic* pcNewChildNode);
+    bool bMoveSubtree(CNode* pcParentNode, CNode* pcNewChildNode);
 
 private:
-    CNodeDynamic* c_root;
+    CNode* c_root;
 };
