@@ -1,8 +1,5 @@
 #include "lista4.h"
 
-#include "lista3_CTreeDynamic.h"
-#include "lista3_CTreeStatic.h"
-
 #include <iostream>
 
 using namespace std;

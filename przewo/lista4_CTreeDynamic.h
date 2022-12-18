@@ -103,24 +103,27 @@ public:
         c_root->vPrintAllBelow();
     }
 
-    bool bMoveSubtree(CNode* pcParentNode, CNode* pcNewChildNode)
-    {
-        CNode* prevParent = pcNewChildNode->pc_parent_node;
-
-        if (!prevParent) {
-            return false;
-        }
-
-        std::vector<CNode*>& children = prevParent->v_children;
-
-        for (int i = 0; i < children.size(); i++) {
-            if (children[i] == pcNewChildNode) {
-                children.erase(children.begin() + i);
-                i = children.size();
-            }
-        }
-    }
+    bool bMoveSubtree(CNode* pcParentNode, CNode* pcNewChildNode);
 
 private:
     CNode* c_root;
 };
+
+template <typename T>
+bool CTreeDynamic<T>::bMoveSubtree(CNode* pcParentNode, CNode* pcNewChildNode)
+{
+    CNode* prevParent = pcNewChildNode->pc_parent_node;
+
+    if (!prevParent) {
+        return false;
+    }
+
+    std::vector<CNode*>& children = prevParent->v_children;
+
+    for (int i = 0; i < children.size(); i++) {
+        if (children[i] == pcNewChildNode) {
+            children.erase(children.begin() + i);
+            i = children.size();
+        }
+    }
+}
